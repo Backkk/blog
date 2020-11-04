@@ -1,8 +1,10 @@
 ---
-title: "(EN) Write-up : C0lddBox"
+title: "(EN) Vulnhub write-up : C0lddBox"
 date: 2020-11-01T20:06:25+01:00
 draft: false
+description: "*Welcome to ColddBox Easy, it is a Wordpress machine with an easy level of difficulty, highly recommended for beginners in the field, good luck!* "
 ---
+# Introduction
 **Machine-Author:** C0ldd\
 **Description:** *Welcome to ColddBox Easy, it is a Wordpress machine with an easy level of difficulty, highly recommended for beginners in the field, good luck!*
 
@@ -10,14 +12,15 @@ draft: false
 
 **Operating system:** Linux
 
-**What will be covered in this write-up:**\
--enumeration\
--reverse-shell\
--privileges escalation
+**What will be covered in this write-up:**
 
-```
-ENUMERATION
-```
+* {{<rawhtml>}}<a href="#enumeration">Enumeration</a>{{</rawhtml>}}
+* {{<rawhtml>}}<a href="#reverse-shell">Reverse-shell</a>{{</rawhtml>}}
+* {{<rawhtml>}}<a href="#privilege-escalation">Privilege escalation</a>{{</rawhtml>}}
+
+
+# ENUMERATION
+
 First, we need to find out where the machine is **located** on the network:
 
 ```nmap -sP 10.0.2.15/24```
@@ -51,7 +54,9 @@ Running: Linux 3.X|4.X
 OS CPE: cpe:/o:linux:linux_kernel:3 cpe:/o:linux:linux_kernel:4
 OS details: Linux 3.2 - 4.9
 ``` 
-Alright, we only have a website running on the port 80, hosting a **WordPress**, running on **Apache 2.4.18**, let's check what it looks like :![wordpress_site](../img/c0ldd_wp_background.PNG)
+Alright, we only have a website running on the port 80, hosting a **WordPress**, running on **Apache 2.4.18**, let's check what it looks like :
+
+![wordpress_site](../img/c0ldd_wp_background.PNG)
 
 We can use a tool to scan this WordPress website, **wpscan** (a tool used to enumerate vulnerable stuffs on WordPress such as vulnerable plugins):
 
@@ -98,9 +103,9 @@ Nice ! Let's try to login as c0ldd on the WordPress, maybe we got the **admin cr
 
 We can see that the user **c0ldd** is the **admin** of the WordPress ! Perfect. We can now **add** or **delete** things, maybe we could setup a **reverse-shell** to have a better control of the web-server ?
 
-```
-REVERSE-SHELL
-```
+
+# REVERSE-SHELL
+
 We could put a PHP reverse-shell code into the plugins configuration. All we have to do is to go ro the **Plugins** menu, then you can modify the **Akismset** plugin, go into the file **akismet/class.akismet-admin.php**, then just select all its content and delete it to paste the reverse shell.
 
 The code I used for the reverse-shell is located in ```/usr/share/webshells/php-reverse-shell.php```
@@ -171,9 +176,9 @@ primer nivel conseguido!c0ldd@ColddBox-Easy
 ```
 We now need to be **#root**...
 
-```
-PRIVILEGE ESCALATION
-```
+
+# PRIVILEGE ESCALATION
+
 The objective of the privilege escalation is to use system **misconfigurations** to escalate to the **#root** user.
 This website is usefull to find some : 
 
@@ -202,13 +207,15 @@ So **GTFO Bins** gave us something to type with vim, let's execute it :
 We are **#root** !! We can now **cat** the **#root** flag :) 
 ``Felicidades, primer nivel conseguido!#``
 
-```
-SPECIAL THANKS
-```
+
+# SPECIAL THANKS
+
 I'd like to thanks **Kr0wZ**, who guided me for this CTF, you can check out his blog : 
 [KrowZ Blog](https://kr0wz.github.io/fr/)\
 Thanks to **Mysaz** who also helped me for this CTF\
-Thanks to **IsIghTT**, here is his discord **IsIghTT#3829**
+Thanks to **IsIghTT**, here is his discord **IsIghTT#3829**\
+**Big** Thanks to Zayceur who helped me to setup this blog and gave me some tips for coding in markdown, his website :
+https://zayceur.ch/
 
 
 
