@@ -1,6 +1,6 @@
 [submodule "public"]
 	path = public
-	url = https://github.com/Backkk/back.github.io.git
+	url = https://github.com/Backkk/backkk.github.io.git
 	branch = master
 [submodule "themes/hugo-theme-terminal"]
 	path = themes/hugo-theme-terminal
