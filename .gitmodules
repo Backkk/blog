@@ -2,3 +2,7 @@
 	path = public
 	url = https://github.com/Backkk/back.github.io.git
 	branch = master
+[submodule "themes/hugo-theme-terminal"]
+	path = themes/hugo-theme-terminal
+	url = https://github.com/panr/hugo-theme-terminal.git
+	branch = master
