@@ -1,4 +1,4 @@
-baseurl = "https://backkk/back.github.io/"
+baseurl = "https://backkk.github.io/back.github.io/"
 themesDir = "themes"
 languageCode = "en-us"
 theme = "hugo-theme-terminal"
