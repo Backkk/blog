@@ -3,7 +3,7 @@ title: "(EN) Write-up : C0lddBox"
 date: 2020-11-01T20:06:25+01:00
 draft: false
 ---
-**Author:** C0ldd\
+**Machine-Author:** C0ldd\
 **Description:** *Welcome to ColddBox Easy, it is a Wordpress machine with an easy level of difficulty, highly recommended for beginners in the field, good luck!*
 
 **Download:**(https://mega.nz/file/VldHiIgA#4nRI2LPZs_x48_-ryCkPvL6Em2lQTSJEKvoReieDMec)
