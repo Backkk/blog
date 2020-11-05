@@ -92,6 +92,8 @@ We found some **users** !
 
 ```wpscan --url http://10.0.2.6 -P /usr/share/wordlists/rockyou.txt --usernames c0ldd,philip,hugo```
 
+**-P**: select the password wordlist to use for the dictionnary attack.
+
 Here is the output:
 ```
 [!] Valid Combinations Found:
