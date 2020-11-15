@@ -152,7 +152,11 @@ Now we have a terminal, we can see that we are the user **www-data**, so we have
 
 ```cd /var/www/html```
 
-c
+```ls```
+
+```wp-admin.php```
+
+let's look at the **wp-admin.php** file :
 ```
 /** MySQL database username */
 define('DB_USER', 'c0ldd');
